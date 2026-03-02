@@ -1,0 +1,45 @@
+JASMINE ALABI
+Email: ajasmine@vt.edu | LinkedIn: linkedin/in/jasmine-alabi-cs | Phone: 571-831-1760 | GitHub: github.com/JasmineA-Tech
+OBJECTIVE
+Computer Science student with strong foundations in algorithms, data structures, and software development seeking a technical
+internship. Experienced in building applications and implementing algorithmic solutions, with interests in system performance,
+scalable architectures, and user-focused software.
+EDUCATION
+Virginia Tech | Blacksburg, VA | B.S. in Computer Science | GPA: 3.2 | Expected Graduation: May 2027
+Awards/Honors: A. James Clark Scholar: merit-based scholarship recognizing academic excellence and leadership in engineering
+Courses: Data Structures & Algorithms, Computer Organization, SW Design & Data Structures, Object-Oriented Programming
+Organizations & Clubs: ColorStack - Member, National Society of Black Engineers (NSBE) - Member, Girls Who Code–Member
+Riverside Highschool | Leesburg, VA | Highschool Diploma - GPA - 4.09
+TECHNICAL SKILLS
+Languages: Java, Python, C, C++, JavaScript, HTML, CSS, MATLAB, SQL
+Tools & Technologies: Git/GitHub, VS Code, Eclipse, Windows, Unity, Canva, LLM, Amazon Kiro
+RELEVANT PROJECTS & RESEARCH
+Emotion Daily Tracker | Web Application | JavaScript, HTML, CSS, Local Storage | April 2025
+Designed and implemented a dynamic and real-time client-side JavaScript application. The application allows users to track their daily
+emotions and view historical entries.
+Algorithm Optimization Project | Java | July 2024
+Developed a human versus CPU opponent Tic-tac-toe game. Optimized game state evaluation using 2D array data structures.
+Personal Portfolio Website | HTML, CSS, JavaScript | February 2026
+Designed and developed a JavaScript based personal portfolio website showcasing projects, technical skills, and experience. Build a
+responsive layout to ensure compatibility across. Deployed website using GitHub Pages and version controlled with Git and GitHub.
+WORK EXPERIENCE
+Allied Universal Security | Amazon Facilities (IAD21 & IAD31) | Herndon, VA | Security Officer | June 2024 - Aug 2025
+Monitored facility access protocols for 500+ daily entries across two Amazon corporate office facilities totaling 20,000+ sq ft.
+Maintained detailed incident logs and reports. Conducted systematic facility patrols using ensuring 100% coverage.
+Virginia Tech Mozaiko Intercultural LLC | Blacksburg, VA | Peer Mentor | August 2024 - May 2025
+Mentored 3 first-year students through personalized academic success plans achieving 100% retention rate. Facilitated 2 group
+workshops on academic planning, demonstrating strong communication and presentation skills.
+HomeGoods Associate | Leesburg, VA | Retail Associate | March 2023 - June 2023
+Processed 50+ customer transactions daily with 99%+ accuracy, optimizing checkout flow during peak hours. Collaborated with a
+10-person team to implement inventory management improvements, reducing restocking time by 15%.
+LEADERSHIP & SERVICE
+Clark Scholar Leadership Team | Virginia Tech | August 2025 - Present
+Coordinate networking and professional development events for 25+ scholarship recipients. Plan and execute monthly programs
+promoting cross-team collaboration, industry connections, and technical skill development.
+Girls Who Code | Virginia Tech Chapter | General Officer | November 2022 - Present
+Coding instructor for elementary school students teaching fundamental CS concepts through interactive programming activities.
+Develop curriculum materials and lead hands-on algorithms, problem-solving, and computational thinking workshops.
+Unity Church | Technology Volunteer | October 2021 - Present
+Manage multimedia presentation systems using ProPresenter software for weekly services serving 100+ attendees. Design promotional
+materials using Canva for church events, demonstrating visual design and communication skills. Troubleshoot technical issues in
+real-time, ensuring seamless user experience during live events.
