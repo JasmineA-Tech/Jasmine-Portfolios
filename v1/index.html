@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasmine's Portfolio Website</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contacts">Contacts</a>
+</nav>
+
+
+<!-- ── HOME ── -->
+<section id="home">
+
+    <div class="intro-text">
+        <h1 class="title">
+            <span>Hello,</span>
+            <span>I'm Jasmine Alabi</span>
+        </h1>
+        <div class="typing-container">
+            <span id="typing-text"></span>
+        </div>
+    </div>
+
+    <img src="images/JasmineAlabi.jpg" alt="Jasmine Alabi" class="profile-pic">
+
+</section>
+
+
+<!-- ── ABOUT ── -->
+<section id="about">
+
+    <div class="about-header">
+        <h2>About Jasmine</h2>
+    </div>
+
+    <!-- GRID container -->
+    <div class="section-content">
+
+        <div class="aboutme-card">
+            <h3>Background</h3>
+            <p>
+                Hello, my name is Jasmine Alabi, and I am a Junior at Virginia Tech majoring in Computer Science.
+            </p>
+        </div>
+
+        <div class="aboutme-card">
+            <h3>Interests</h3>
+            <p>
+                Talk about your interests here (software engineering, web development, AI, etc.)
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+    <div class="project-header">
+        <h2>My Projects</h2>
+    </div>
+
+    <!-- GRID container -->
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h3>Emotion Daily Tracker</h3>
+            <p>
+                Website that helps users track daily emotions and mood patterns using HTML, CSS, and JavaScript.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>TicTacToe Game</h3>
+            <p>
+                Java-based TicTacToe game using 2D arrays and logic to simulate CPU vs user gameplay.
+                This was a small fun idea of wanting to learn how to create a mini game on eclipse. 
+            </p>
+        </div>
+
+         <div class="project-card">
+            <h3>Personal Website</h3>
+            <p>
+                This is the website you are currently viewing! Built with HTML, CSS, and JavaScript.
+                I was able to implement a typing animation effect on the home page using javascript.
+                I've also added some hover effects on the contacts page to make it more interactive for users like you.
+            </p>
+        </div>
+
+         <div class="project-card">
+            <h3>Upgraded Personal Website</h3>
+            <p>
+                You can add more projects here later.
+            </p>
+        </div>
+
+        <!-- future project...-->
+        <div class="project-card">
+            <h3>Future Project</h3>
+            <p>
+                You can add more projects here later.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience">
+
+    <div class="experience-header">
+        <h2>My Experience</h2>
+    </div>
+
+    <!-- GRID container -->
+    <div class="experience-grid">
+        <div class="experience-card">
+            <h3>DVELAB Research</h3>
+            <p>
+                Member of DVELAB research group focused on Human-Computer Interaction,
+                Extended Reality, Smart Technologies, and Machine Learning.
+            </p>
+        </div>
+
+        <!-- future experience -->
+        <div class="experience-card">
+            <h3>Future Internship</h3>
+            <p>
+                Add internship or work experience here.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- CONTACTS -->
+<section id="contacts">
+
+    <div class="contacts-header">
+        <h2>Contact Me</h2>
+    </div>
+
+    <!-- GRID container -->
+    <div class="contacts-grid">
+
+        <!-- phone -->
+        <a href="tel:571-831-1760" class="contacts-card">
+            <div>
+                <h3>Phone</h3>
+                <p>571-831-1760</p>
+            </div>
+            <i class="fa-solid fa-phone"></i>
+        </a>
+
+        <a href="mailto:alabijasmine2005@gmail.com" class="contacts-card">
+            <div>
+                <h3>Email</h3>
+                <p>alabijasmine2005@gmail.com</p>
+            </div>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <!-- LinkedIn -->
+       <a href="https://www.linkedin.com/in/jasmine-alabi-cs/" target="_blank" class="contacts-card">
+            <div>
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/in/jasminealabi</p>
+            </div>
+            <i class="fa-brands fa-linkedin"></i>
+         </a>
+
+        <a href="https://github.com/JasmineA-Tech" target="_blank" class="contacts-card">
+            <div>
+                <h3>GitHub</h3>
+                <p>github.com/JasmineA-Tech</p>
+            </div>
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ── Typing Animation Script ── -->
+<script>
+
+const sentences = [
+    "Welcome to my portfolio website!",
+    "Where you will get to know more about me and my work.",
+    "Feel free to explore my projects, experience, and interests.",
+    "I'm always open to new opportunities."
+];
+
+let i = 0; //index for sentences
+let j = 0; //index for characters in each sentence
+let isDelete = false; //flag to see if we are deleting or typing
+
+function typeEffect() {
+ 
+    const element = document.getElementById("typing-text"); // get the element that is displayed on the home page
+
+    const currentSentence = sentences[i]; // get the current sentence we are working on based on the index i
+
+    /* if we delete we want to remove characters from the end of the sentence and if we are typing we want to add characters to the end of the sentence */
+    if (isDelete) { 
+        element.textContent = currentSentence.substring(0, j--);
+    } else {
+        element.textContent = currentSentence.substring(0, j++);
+    }
+
+    /* if we are not deleting and the index of the character is equal to the length of the sentence then we want to start deleting after a short delay */
+    if (!isDelete && j === currentSentence.length) {
+        isDelete = true;
+        setTimeout(typeEffect, 1500);
+        return;
+    }
+
+    /* if delete is true and the index of the sentence is 0 then we want to switch to the next sentence and start typing again */
+    if (isDelete && j === 0) {
+        isDelete = false;
+        i = (i + 1) % sentences.length;
+    }
+
+    /* set a timeout to call the typeEffect function again after a short delay. The delay is shorter when deleting to make it look more natural */
+    setTimeout(typeEffect, isDelete ? 30 : 50);
+}
+
+typeEffect();
+
+</script>
+
+
+</body>
+</html>
