@@ -57,6 +57,12 @@ The second version was enhanced with the help of Amazon Kiro AI, bringing a more
 
 ---
 
+## Additional Project
+
+Created **RejoiceSignatureRentals**, a business website for my mom's business, using React, JavaScript, HTML, CSS, and Amazon Kiro.
+
+---
+
 ## Tech Stack
 
 - HTML5, CSS3, JavaScript
