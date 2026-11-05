@@ -78,16 +78,26 @@ function ServiceModal({
     document.body.style.overflow = 'hidden'
 
     // Re-init Booqable so it finds the product button rendered inside the modal
+    // Booqable's script may still be loading, so retry until the button renders
     type BooqableWindow = Window & { Booqable?: { init?: () => void } }
-    const timer = setTimeout(() => {
+    let attempts = 0
+    const timer = setInterval(() => {
+      attempts += 1
+      const rendered = document.querySelector(
+        '.service-modal-cart .booqable-product-button-wrapper'
+      )
+      if (rendered || attempts > 40) {
+        clearInterval(timer)
+        return
+      }
       const bq = (window as BooqableWindow).Booqable
       if (bq?.init) bq.init()
-    }, 150)
+    }, 500)
 
     return () => {
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
-      clearTimeout(timer)
+      clearInterval(timer)
     }
   }, [onClose])
 
