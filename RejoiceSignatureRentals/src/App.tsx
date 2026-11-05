@@ -1,63 +1,7 @@
 ﻿import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './App.css'
-
-const services = [
-  {
-    number: '01',
-    title: '360 Photo Booth',
-    description:
-      'A fully immersive 360° video experience that captures every angle of your celebration.',
-    tag: 'MOST POPULAR',
-    booqableId: '360-video-booth',
-    image:
-      'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=85',
-  },
-  {
-    number: '02',
-    title: 'iPad Photo Booth',
-    description:
-      'Sleek, modern photo booth with instant prints and digital sharing for your guests.',
-    booqableId: 'ipad-photo-booth',
-    image:
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85',
-  },
-  {
-    number: '03',
-    title: 'Floral Backdrops',
-    description:
-      'Lush, custom floral walls that transform any space into a breathtaking backdrop.',
-    booqableId: 'floral-backdrop',
-    image:
-      'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=85',
-  },
-  {
-    number: '04',
-    title: 'Heart Arches',
-    description:
-      'Romantic heart-shaped arches adorned with florals for ceremonies and photo moments.',
-    booqableId: 'heart-arch',
-    image:
-      'https://images.unsplash.com/photo-1519225421980-888cb8d075de?auto=format&fit=crop&w=900&q=85',
-  },
-  {
-    number: '05',
-    title: 'Tables & Chairs',
-    description:
-      'Elegant furniture rentals to seat your guests in style and comfort.',
-    booqableId: 'tables-chairs',
-    image:
-      'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=85',
-  },
-  {
-    number: '06',
-    title: 'Event Décor',
-    description:
-      'Curated décor packages that bring your vision to life with luxury details.',
-    booqableId: 'party-decour',
-    image:
-      'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=85',
-  },
-]
+import { services } from './data/services'
 
 const galleryImages = [
   'https://images.unsplash.com/photo-1519225421980-888cb8d075de?auto=format&fit=crop&w=900&q=85',
@@ -91,18 +35,15 @@ const reasons = [
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
-  // Load Booqable script dynamically after React mounts
+  // Sticky navbar — becomes visible once user scrolls past the hero
   useEffect(() => {
-    if (document.getElementById('booqable-script')) return
-
-    const script = document.createElement('script')
-    script.id = 'booqable-script'
-    script.src =
-      'https://641751eb-ca89-416c-8fb9-f59540ee7412.assets.booqable.com/v2/booqable.js'
-    script.async = true
-
-    document.body.appendChild(script)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
@@ -144,7 +85,7 @@ function App() {
   return (
     <main>
 
-      <header className="navbar">
+      <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
         <a className="brand" href="#home" aria-label="Rejoice Signature Rentals Home">
           <img
             className="brand-logo"
@@ -170,10 +111,10 @@ function App() {
           aria-label="Main navigation"
         >
           <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-          <a href="#gallery" onClick={() => setMenuOpen(false)}>Gallery</a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+          <Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+          <a href="#footer" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
 
 
@@ -184,6 +125,13 @@ function App() {
 
       <section className="hero" id="home">
        
+
+        <img
+          className="hero-image"
+          src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1800&q=85"
+          alt=""
+          aria-hidden="true"
+        />
 
         <div className="hero-overlay" />
 
@@ -202,7 +150,7 @@ function App() {
           </p>
 
           <div className="hero-actions">
-            <a className="primary-button" href="#services">
+            <a className="primary-button" href="mailto:rejoicesignaturerentals@gmail.com">
               Book Your Experience <span>↗</span>
             </a>
             <a className="secondary-button" href="#services">
@@ -245,12 +193,6 @@ function App() {
                 <div>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
-                  {service.booqableId && (
-                    <div
-                      className="booqable-product-button"
-                      data-id={service.booqableId}
-                    />
-                  )}
                 </div>
                 <a
                   href="#contact"
@@ -261,6 +203,12 @@ function App() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="services-bottom-cta">
+          <Link to="/services" className="primary-button">
+            View All Services <span>↗</span>
+          </Link>
         </div>
       </section>
 
@@ -346,12 +294,12 @@ function App() {
           Let’s bring your vision to life with thoughtful details and
           unforgettable experiences.
         </p>
-        <a className="primary-button" href="mailto:hello@rejoicesignaturerentals.com">
+        <a className="primary-button" href="mailto:rejoicesignaturerentals@gmail.com">
           Book Your Experience <span>↗</span>
         </a>
       </section>
 
-      <footer className="footer">
+      <footer className="footer" id="footer">
         <div className="footer-main">
 
             {/* Left column: Logo and business description */}
@@ -390,11 +338,6 @@ function App() {
                   </svg>
                 </a>
 
-                <a href="#" aria-label="X" title="X">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.9 2H22l-6.8 7.78L23.2 22h-6.3l-4.94-7.5L5.4 22H2.3l7.28-8.33L1.8 2h6.46l4.47 6.83L18.9 2Zm-1.1 18h1.74L7.3 3.9H5.43L17.8 20Z"/>
-                  </svg>
-                </a>
               </div>
             </div>
 
