@@ -57,6 +57,12 @@ The second version was enhanced with the help of Amazon Kiro AI, bringing a more
 
 ---
 
+## Business Website Project
+
+Created a real business website using React, TSX, and CSS, with Booqable integration.
+
+---
+
 ## Tech Stack
 
 - HTML5, CSS3, JavaScript
