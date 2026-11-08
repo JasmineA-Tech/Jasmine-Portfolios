@@ -59,7 +59,7 @@ The second version was enhanced with the help of Amazon Kiro AI, bringing a more
 
 ## Rejoice Signature Rentals Website
 
-I created a website for **Rejoice Signature Rentals**, my mom's business. The project involved building a real business website with **React, TSX, and CSS**, and integrating **Booqable** to support the rental business.
+I created a website for **Rejoice Signature Rentals**, my mom's business. The project involved building a real business website with **React, TSX, and CSS**, and integrating **Booqable** to support the rental business. I also used **GitHub Copilot** and **Amazon Kiro** during development.
 
 ---
 
